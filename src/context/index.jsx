@@ -37,7 +37,7 @@ const StateContextProvider = (props) => {
         await blockHash.wait();
         toast.update(load, {render: "Added Voter To Voter List", type: 'success', isLoading: false, autoClose: 3000})
       } catch (error) {
-        toast.warn(error.data.data.reason);
+        toast.error(error.data.data.reason);
       }
     }
   }
@@ -68,15 +68,14 @@ const StateContextProvider = (props) => {
     const contract = await getContract();
     try {
       const blockHash = await contract.vote(partyName);
+      const load = toast.loading('Creating Party to vote... Please Wait')
       console.log("Uploading your Vote Please Wait...");
       await blockHash.wait();
       console.log("Voted Successfully, You can check your progress in etherscan Website")
+      toast.update(load, {render: "Voted Successfully, You can check your progress in etherscan Website", type: 'success', isLoading: false})
     } catch (error) {
       const errorMessage = error.data.data.reason;
-      toast.warn(errorMessage);
-      if(errorMessage == "Already voted"){
-
-      }
+      toast.error(errorMessage);
     }
   }
 
