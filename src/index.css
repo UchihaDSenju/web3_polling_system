@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .customButton{
+    border-radius: 15px;
+    color: #EEEEEE;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .btnLightBlue{
+    background: #64CCC5;
+  }
+
+  .btnRed{
+    background: red;
+  }
+}
