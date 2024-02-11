@@ -30,11 +30,15 @@ const StateContextProvider = (props) => {
     else{
       const contract = await getContract();
       const address = formData.voteCandidateAddress;
-      const blockHash = await contract.addVoter(address);
+      try {
+        const blockHash = await contract.addVoter(address);
       // console.log("adding voter to the voter List")
-      const load = toast.loading('Adding the candidate to the voter list')
-      await blockHash.wait();
-      toast.update(load, {render: "Added Voter To Voter List", type: 'success', isLoading: false})
+        const load = toast.loading('Adding the candidate to the voter list')
+        await blockHash.wait();
+        toast.update(load, {render: "Added Voter To Voter List", type: 'success', isLoading: false, autoClose: 3000})
+      } catch (error) {
+        toast.warn(error.data.data.reason);
+      }
     }
   }
 
@@ -62,10 +66,18 @@ const StateContextProvider = (props) => {
 
   const voteParty = async (partyName) => {
     const contract = await getContract();
-    const blockHash = await contract.vote(partyName);
-    console.log("Uploading your Vote Please Wait...");
-    await blockHash.wait();
-    console.log("Voted Successfully, You can check your progress in etherscan Website")
+    try {
+      const blockHash = await contract.vote(partyName);
+      console.log("Uploading your Vote Please Wait...");
+      await blockHash.wait();
+      console.log("Voted Successfully, You can check your progress in etherscan Website")
+    } catch (error) {
+      const errorMessage = error.data.data.reason;
+      toast.warn(errorMessage);
+      if(errorMessage == "Already voted"){
+
+      }
+    }
   }
 
   const checkWallet = () => {

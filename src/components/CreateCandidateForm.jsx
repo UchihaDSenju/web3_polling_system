@@ -25,19 +25,24 @@ const CreateCandidateForm = () => {
     if(context.owner.toLowerCase() == context.currentAccount){
       return(
         <>
-      <div className='flex h-[90%]'>
-        <div className='flex flex-col w-[500px] h-[60%] justify-evenly bg-[#64CCC5] mx-[auto] mt-20 rounded-2xl py-5'>
-          the present name is {context.formData.name}<br />
-          the admin is {context.owner}
+      <div className='flex flex-col h-[90%] sm:flex-row'>
+        <div className='flex flex-col h-[60%] justify-evenly bg-[#64CCC5] mx-[auto] mt-20 rounded-2xl py-5 sm:[500px]'>
+          <div className='mx-1'>
+          The present name is {context.formData.name}<br />
+          The admin is {context.owner}
+          </div>
           <Input placeholder='Candidate Name' name='name' type='text' changeHandlerFunction={context.handleChange}/>
           <Input placeholder='Party Name' name='party' type='text' changeHandlerFunction={context.handleChange}/>
           <Input placeholder='Education' name='education' type='text' changeHandlerFunction={context.handleChange}/>
           <Input placeholder='Party Logo (link)' name='logo' type='text' changeHandlerFunction={context.handleChange}/>
           <button onClick={context.createCandidate} className='customButton bg-red-600 mx-5 h-10'>Create Candidate</button>
         </div>
-        <div className='flex flex-col w-[500px] justify-evenly bg-[#64CCC5] mx-[auto] mt-20 rounded-2xl '>
-          the present voterToAdd is {context.formData.voteCandidateAddress}<br />
-          the admin is {context.owner}
+        <div className='flex flex-col justify-evenly bg-[#64CCC5] mx-[auto] mt-20 rounded-2xl sm:w-[500px]'>
+          <div className='mx-1'>
+          The present voterToAdd is {context.formData.voteCandidateAddress}
+          <br />
+          The admin is {context.owner}
+          </div><br />
           <Input placeholder='Address of Voting Candidate' name='voteCandidateAddress' type='text' changeHandlerFunction={context.handleChange}/>
           <button onClick={context.addVoter} className='customButton bg-red-600 mx-5 h-10'>Add Candidate</button>
         </div>
