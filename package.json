@@ -2,6 +2,7 @@
   "name": "frontend",
   "private": true,
   "version": "0.0.0",
+  "homepage": "https://uchihadsenju.github.io/web3_polling_system",
   "type": "module",
   "scripts": {
     "dev": "vite",
