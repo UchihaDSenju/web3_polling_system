@@ -14,10 +14,10 @@ const Results = () => {
       <div>
         {candidates.map((candidate, index) => {
           return(
-            <>
-              <CandidateCard key={index} imageUrl={candidate.logo} candidateName={candidate.name} qualification={candidate.education} partyName={candidate.party} />
-              {candidate.numberOfVotes.toNumber()}
-            </>
+            <div className='flex items-center'>
+              <CandidateCard key={index} imageUrl={candidate.logo} candidateName={candidate.name} qualification={candidate.education} partyName={candidate.party} numberOfVotes={candidate.numberOfVotes.toNumber()} disabled={true}/>
+              {/* <div key={index}>{candidate.numberOfVotes.toNumber()}</div> */}
+            </div>
           )
         })}
       </div>

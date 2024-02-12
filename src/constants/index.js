@@ -1,4 +1,4 @@
-export const contractAddress = "0x3df99e6a16EBE887d7009A78BeB185577CbB7390";
+export const contractAddress = "0x7416e1080f5bAde22c9F8FaF527ffd28FeaEd1a6";
 export const contractABI = [
 	{
 		"inputs": [],
@@ -240,3 +240,6 @@ export const contractABI = [
 		"type": "function"
 	}
 ];
+
+// Sepolia contract 0x7416e1080f5bAde22c9F8FaF527ffd28FeaEd1a6
+// Ganache contract 0x3df99e6a16EBE887d7009A78BeB185577CbB7390
