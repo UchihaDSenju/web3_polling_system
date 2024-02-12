@@ -55,7 +55,7 @@ const StateContextProvider = (props) => {
       const load = toast.loading('Creating Party to vote... Please Wait')
       await blockHash.wait();
       console.log("New block created... check your network", blockHash.hash)
-      toast.update(load, {render: "Candidate added check the vote page", type: 'success', isLoading: false})
+      toast.update(load, {render: "Candidate added check the vote page", type: 'success', isLoading: false, autoClose: 3000})
     }
   }
 
@@ -69,11 +69,11 @@ const StateContextProvider = (props) => {
     const contract = await getContract();
     try {
       const blockHash = await contract.vote(partyName);
-      const load = toast.loading('Creating Party to vote... Please Wait')
+      const load = toast.loading('Uploading your vote Please wait...')
       console.log("Uploading your Vote Please Wait...");
       await blockHash.wait();
       console.log("Voted Successfully, You can check your progress in etherscan Website")
-      toast.update(load, {render: "Voted Successfully, You can check your progress in etherscan Website", type: 'success', isLoading: false})
+      toast.update(load, {render: "Voted Successfully, You can check your progress in etherscan Website", type: 'success', isLoading: false, autoClose: 3000})
     } catch (error) {
       const errorMessage = error.reason;
       console.log(errorMessage)
