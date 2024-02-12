@@ -6,7 +6,7 @@ const Navbar = () => {
     <>
         <nav className='flex justify-between bg-[#053B50] py-5'>
             <div>
-                LogoHere
+                <h1 className='text-[25px] text-yellow-200'><span className='font-protestStrike text-[30px] text-yellow-600'>WEB3 </span>Polling System</h1>
             </div>
             <div className='flex'>
                 <Link className='customButton btnLightBlue mx-2' to={'/'}>Home</Link>

@@ -6,6 +6,9 @@ export default {
   ],
   theme: {
     extend: {},
+    fontFamily: {
+      protestStrike: ['Protest Strike', 'sans-serif']
+    }
   },
   plugins: [],
 }
