@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { StateContext } from '../context'
 import ConnectWalletButton from './ConnectWalletButton'
+import { useNavigate } from 'react-router-dom';
 
 
 const Input = ({placeholder, name, type, changeHandlerFunction}) => {
@@ -19,6 +20,7 @@ const CreateCandidateForm = () => {
 
   const context = useContext(StateContext)
   const checker = context.checkWallet()
+  const navigate = useNavigate();
   context.getOwnerAddress();
   console.log(context.owner)
   if(checker){
@@ -53,9 +55,18 @@ const CreateCandidateForm = () => {
     else{
       return(
         <>
-          Not an admin so Move to vote page<br></br>
-          {context.owner}<br></br>
-          {context.currentAccount}
+          <div className='flex h-[100vh] justify-center items-center'>
+            {/* Not an admin so Move to vote page<br></br>
+            {context.owner}<br></br>
+            {context.currentAccount} */}
+              <div className='mx-auto w-fit text-center bg-yellow-500 rounded-sm p-5 text-amber-900'>
+                <h1 className=''>Oops.. Seems like you are <span className='text-red-600'>not an admin</span></h1>
+                <h1>Kindly move to the vote page</h1>
+                <button className='bg-red-950 text-white p-1 rounded-sm mt-3 hover:bg-red-700' onClick={() => {
+                  navigate('/votePage')
+                }}>Move to vote page</button>
+              </div>
+          </div>
         </>
       )
     }
