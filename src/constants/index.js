@@ -1,3 +1,5 @@
+import { genIns1, genIns2, genIns3, genIns4 } from "../media";
+
 export const contractAddress = "0x4538eF4E1865F1cb5a5db2410D73BCf54C83Df9D";
 export const contractABI = [
 	{
@@ -244,3 +246,28 @@ export const contractABI = [
 // Sepolia contract 0x7416e1080f5bAde22c9F8FaF527ffd28FeaEd1a6
 // Sepolia Saheel Contract 0x4538eF4E1865F1cb5a5db2410D73BCf54C83Df9D
 // Ganache contract 0x3df99e6a16EBE887d7009A78BeB185577CbB7390
+
+export const datas = {
+	generalInstructions: [
+		{
+			'image': genIns1,
+			'title': 'Install MetaMask Wallet',
+			'desc': 'Go to chrome extension store and install metamask Wallet to be able to use the webapp'
+		},
+		{
+			'image': genIns2,
+			'title': 'Select Sepolia Network',
+			'desc': 'Click the burger on the left corner and Select Show test networks and you will be able to see Sepolia Network'
+		},
+		{
+			'image': genIns3,
+			'title': 'Check network',
+			'desc': 'Now that you have sepolia network initially you will have 0 Sepolia eth but you can get them through faucet'
+		},
+		{
+			'image': genIns4,
+			'title': 'Get Sepolia ETH',
+			'desc': 'Go to Ethereum Sepolia faucet and input your wallet public address, and Voila you will have 0.5 Sepolia ETH in your account'
+		},
+	]
+}

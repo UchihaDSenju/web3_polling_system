@@ -22,3 +22,8 @@
     background: red;
   }
 }
+
+html, body {
+  height: 100vh;
+  width: 100vw;
+  }
