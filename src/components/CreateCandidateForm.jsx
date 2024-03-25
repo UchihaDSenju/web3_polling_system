@@ -12,7 +12,7 @@ const Input = ({placeholder, name, type, changeHandlerFunction}) => {
       type={type} 
       onChange={(e) => changeHandlerFunction(e, name)} 
       className='mx-5 my-5 h-10 rounded-lg px-2'
-      />
+    />
   )
 }
 
@@ -60,7 +60,7 @@ const CreateCandidateForm = () => {
             {context.owner}<br></br>
             {context.currentAccount} */}
             <h1 className='text-2xl mb-2'>New Here, Add your credentials to voter list</h1>
-              <form action="https://api.web3forms.com/submit" method="POST" className='flex flex-col gap-1 bg-yellow-500 rounded-sm p-5 text-amber-900 w-[500px] mb-5'>
+              <form action="https://api.web3forms.com/submit" method="POST" className='flex flex-col gap-1 bg-yellow-500 rounded-sm p-5 text-amber-900 w-[300px] sm:w-[500px] mb-5'>
                 <input type='hidden' name="access_key" value="035c6480-54ab-4575-8359-231a07a8df4b"/>
                 <input className='text-black p-1' type="text" name="name" placeholder='Your Name'required></input>
                 <input className='text-black p-1' type="email" name="email" placeholder='Your Email' required />
