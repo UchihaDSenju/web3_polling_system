@@ -27,8 +27,8 @@ const CreateCandidateForm = () => {
     if(context.owner.toLowerCase() == context.currentAccount){
       return(
         <>
-      <div className='flex flex-col h-[90%] sm:flex-row'>
-        <div className='flex flex-col h-[60%] justify-evenly bg-[#64CCC5] mx-[auto] mt-20 rounded-2xl py-5 sm:[500px]'>
+      <div className='flex flex-col h-[90%] sm:flex-row gap-5 justify-center items-center mt-10'>
+        <div className='flex flex-col gap-1 bg-yellow-500 rounded-sm p-5 text-amber-900 w-[300px] sm:w-[500px] mb-5'>
           <div className='mx-1'>
           The present name is {context.formData.name}<br />
           The admin is {context.owner}
@@ -39,7 +39,7 @@ const CreateCandidateForm = () => {
           <Input placeholder='Party Logo (link)' name='logo' type='text' changeHandlerFunction={context.handleChange}/>
           <button onClick={context.createCandidate} className='customButton bg-red-600 mx-5 h-10'>Create Candidate</button>
         </div>
-        <div className='flex flex-col justify-evenly bg-[#64CCC5] mx-[auto] mt-20 rounded-2xl sm:w-[500px]'>
+        <div className='flex flex-col gap-1 bg-yellow-500 rounded-sm p-5 text-amber-900 w-[300px] sm:w-[500px] mb-5'>
           <div className='mx-1'>
           The present voterToAdd is {context.formData.voteCandidateAddress}
           <br />
@@ -54,7 +54,7 @@ const CreateCandidateForm = () => {
     }
     else{
       return(
-        <>
+        <div>
           <div className='flex flex-col h-[100vh] justify-center items-center'>
             {/* Not an admin so Move to vote page<br></br>
             {context.owner}<br></br>
@@ -89,7 +89,7 @@ const CreateCandidateForm = () => {
                 }}>Move to vote page</button>
               </div>
           </div>
-        </>
+        </div>
       )
     }
   }
