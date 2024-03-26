@@ -40,7 +40,13 @@ const Home = () => {
             })}
           </div>
         </div>
-        <p className={toggle === 2 ? "block" : "hidden"}>Under Construction</p>
+        <div className={toggle === 2 ? "block my-3 w-[60%] mx-auto text-center" : "hidden"}>
+            {datas.generalInstructionsAndroid.map((data, ind) => {
+              return (
+                <InstructionCard key={ind} image={data.image} insNumber={ind + 1} title={data.title} desc={data.desc} />
+              )
+            })}
+        </div>
       </div>
     </>
   )

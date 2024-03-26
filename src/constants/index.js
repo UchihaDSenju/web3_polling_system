@@ -1,4 +1,4 @@
-import { genIns1, genIns2, genIns3, genIns4 } from "../media";
+import { genIns1, genIns2, genIns3, genIns4, genIns5, genIns6, genIns7 } from "../media";
 
 export const contractAddress = "0x4538eF4E1865F1cb5a5db2410D73BCf54C83Df9D";
 export const contractABI = [
@@ -268,6 +268,23 @@ export const datas = {
 			'image': genIns4,
 			'title': 'Get Sepolia ETH',
 			'desc': 'Go to Ethereum Sepolia faucet and input your wallet public address, and Voila you will have 0.5 Sepolia ETH in your account'
+		},
+	],
+	generalInstructionsAndroid: [
+		{
+			'image': genIns5,
+			'title': 'Install MetaMask Wallet',
+			'desc': 'Go to playstore and Install Metamask'
+		},
+		{
+			'image': genIns6,
+			'title': 'Select Sepolia Network',
+			'desc': 'From the default Ethereum main net choose Sepolia tetsnet'
+		},
+		{
+			'image': genIns7,
+			'title': 'Use the browser in Metamask App',
+			'desc': 'Use the application from the Metamak app for easy Wallet connectivity'
 		},
 	]
 }
